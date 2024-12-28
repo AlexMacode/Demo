@@ -24,3 +24,30 @@ mybatis-plus:
 logging:
   level:
     com.hmdp: debug
+knife4j:
+  enable: true # 开启或禁用 Knife4j 文档功能。true 表示启用，false 表示禁用。
+  openapi:
+    title: "标题" # 定义 API 文档的标题，可以自定义为 "项目 API 文档"。
+    description: "描述" # API 文档的简短描述，帮助用户了解项目背景。
+    email: "" # API 维护者的联系邮箱，可为空或填入负责人的邮箱地址。
+    concat: cyt # API 文档的联系人名称，定义为 'cyt'，可替换为实际联系人名字。
+    url:  # 项目文档的链接，可以指向官方文档、帮助文档等。
+    version: v1.0 # API 的版本号，这里设置为 v4.0，可根据项目实际版本调整。
+    license: Apache 2.0 # 使用的开源协议类型，这里为 Apache 2.0 协议。
+    license-url:  # 开源协议的链接地址，指向协议的详细内容。
+    terms-of-service-url:  # 服务条款的链接，可以引导用户查看服务条款。
+
+    group:
+      # 定义 API 文档的第一个分组
+      test1:
+        group-name: "管理端" # 组名称为 "管理端"，在 Knife4j 界面中显示。
+        api-rule: package # API 显示规则为按包名筛选和归类。
+        api-rule-resources:
+          - com.cyt.controller.admin # 此组下的 API 来自于 com.cyt.controller.admin 包。
+
+      # 定义 API 文档的第二个分组
+      test2:
+        group-name: "用户端" # 组名称为 "用户端"，在 Knife4j 界面中显示。
+        api-rule: package # API 显示规则为按包名筛选和归类。
+        api-rule-resources:
+          - com.cyt.controller.user # 此组下的 API 来自于 com.cyt.controller.user 包。

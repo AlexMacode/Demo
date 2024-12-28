@@ -1,0 +1,29 @@
+package com.hmdp.config;
+
+import org.redisson.Redisson;
+import org.redisson.api.RedissonClient;
+import org.redisson.config.Config;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * Description:
+ * Author: 马鹏丽
+ * Date: 2024/12/22
+ * Time: 16:50
+ * Version: ${1.0}
+ * Since: ${1.0}
+ */
+@Configuration
+public class RedissonConfig {
+
+    @Bean
+    public RedissonClient redissonClient() {
+        // 配置
+        Config config = new Config();
+        config.useSingleServer().setAddress("redis://127.0.0.1:6379");
+
+        // 创建 RedissonClient 对象
+        return Redisson.create(config);
+    }
+}
